@@ -1,12 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import axios from "axios";
 
 class PortfolioHome extends Component {
   render() {
-    return (
-      <div>
-        
-      </div>
-    )
+    return <div />;
   }
 }
-    export default PortfolioHome;
+
+
+
+
+
+const mapStoreToProps = reduxStore => ({
+  reduxStore
+});
+
+export default connect(mapStoreToProps)(PortfolioHome);

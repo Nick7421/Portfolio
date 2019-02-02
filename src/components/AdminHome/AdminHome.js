@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux';
+import axios from 'axios';
 
 class AdminHome extends Component {
   render() {
@@ -9,4 +11,9 @@ class AdminHome extends Component {
     )
   }
 }
-export default AdminHome;
+
+const mapStoreToProps = reduxStore => ({
+    reduxStore
+  });
+  
+  export default connect(mapStoreToProps)(AdminHome);

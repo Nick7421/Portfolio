@@ -1,13 +1,23 @@
-import React, { Component } from 'react';
-import './App.css';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import React, { Component } from "react";
+import "./App.css";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+import PortfolioHome from "../PortfolioHome/PortfolioHome";
+import AdminHome from "../AdminHome/AdminHome";
+import Header from "../Header/Header";
 
 class App extends Component {
   // Renders the entire app on the DOM
   render() {
     return (
-      <div className="App">
-        <p>Empty Page</p>
+      <div>
+        <Router>
+          <div className="App">
+          <header><Header /></header>
+              <Route extact path="/portfolio" component={PortfolioHome} />
+              <Route extact path="/admin" component={AdminHome} />
+            
+          </div>
+        </Router>
       </div>
     );
   }

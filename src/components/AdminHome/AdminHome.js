@@ -6,6 +6,7 @@ class AdminHome extends Component {
   render() {
     return (
       <div>
+      <p>Admin Home Page</p>
         
       </div>
     )

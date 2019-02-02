@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 
 // Route Includes
-const projectRouter = require('./routes/project.router')
-const adminRouter = require('./routes/admin.router')
+const projectRouter = require('./routes/project.router');
+const adminRouter = require('./routes/admin.router');
 
 /** ---------- MIDDLEWARE ---------- **/
 app.use(bodyParser.json()); // needed for angular requests

@@ -15,6 +15,7 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
 yield takeEvery('GET_PROJECTS',getProjects);
+yield takeEvery('GET_TAGS',getTags);
 }
 
 function* getProjects(action){
@@ -24,6 +25,16 @@ function* getProjects(action){
         yield put(nextAction);
     }catch(error){
         console.log(error,'in get projects');
+    }
+}
+
+function* getTags(action){
+    try{
+        const serverResponse = yield axios.get('/admin');
+        const nextAction ={type:'SET_TAGS', payload:serverResponse.data};
+        yield put(nextAction);
+    }catch(error){
+        console.log(error,'in get Tags saga');
     }
 }
 

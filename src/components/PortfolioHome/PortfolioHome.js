@@ -21,7 +21,9 @@ class PortfolioHome extends Component {
   render() {
     return (
         <div>
-        <Header />
+        <div>
+        {JSON.stringify(this.props.reduxStore.projects)};
+        </div>
         <Grid container spacing={32}>
             {this.props.reduxStore.projects.map((projects) => (
                 <PortfolioCards key={projects.id} projects={projects} />

@@ -15,7 +15,9 @@ import Link from '@material-ui/core/Link';
 
 
 class PortfolioCards extends Component {
-
+    constructor(props){
+        super(props);
+    }
 
 
   render() {

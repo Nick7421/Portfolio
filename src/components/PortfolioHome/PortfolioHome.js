@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import axios from "axios";
 import Header from '../Header/Header';
+import PortfolioCards from './PortfolioCards';
+
 //Material-UI componenets
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
 class PortfolioHome extends Component {
+
  componentDidMount(){
      this.getProjects();
  }
@@ -21,8 +23,8 @@ class PortfolioHome extends Component {
         <div>
         <Header />
         <Grid container spacing={32}>
-            {this.props.reduxStore.projects.map((projects,i) => (
-                <PortfolioCards key={i} projects={projects} />
+            {this.props.reduxStore.projects.map((projects) => (
+                <PortfolioCards key={projects.id} projects={projects} />
             ))}
 
         </Grid>

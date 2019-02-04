@@ -40,6 +40,15 @@ class AdminForm extends Component {
     description: "Description"
   };
 
+  componentDidMount = () => {
+    this.getTags();
+}
+
+getTags = () => {
+    const action = { type: 'GET_TAGS'};
+    this.props.dispatch(action);
+}
+
   handleNameChange = event => {
     this.setState({
         title: event.target.value,
@@ -107,10 +116,10 @@ handleDescriptionChange = event => {
             variant="outlined"
           />
           <TextField
-            required
-            id="outlined-name"
+            // required
+            id="outlined-tag"
             select
-            label="Select a tag"
+            label="Select a project tag"
             className={classes.textField}
             value={this.state.tag}
             onChange={this.handleTagChange}
@@ -123,11 +132,10 @@ handleDescriptionChange = event => {
             helperText="Please select your project type"
             margin="normal"
           >
-            {/* {tag.map(option => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
+            {this.props.reduxStore.tags.map(tag => (
+              <MenuItem key={tag.id} value={tag.name}>
               </MenuItem>
-            ))} */}
+            ))}
           </TextField>
 
           <TextField
@@ -177,8 +185,8 @@ AdminForm.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = reduxState => ({
-  reduxState
-});
+const mapStoreToProps = reduxStore => ({
+    reduxStore
+  });
 
-export default connect(mapStateToProps)(withStyles(styles)(AdminForm));
+export default connect(mapStoreToProps)(withStyles(styles)(AdminForm));

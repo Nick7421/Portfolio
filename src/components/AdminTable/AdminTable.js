@@ -11,8 +11,8 @@ import axios from 'axios';
     )
   }
 }
-const mapStateToProps = reduxState => ({
-    reduxState,
-});
+const mapStoreToProps = reduxStore => ({
+    reduxStore
+  });
 
-export default connect(mapStateToProps)(AdminTable);
+export default connect(mapStoreToProps)(AdminTable);

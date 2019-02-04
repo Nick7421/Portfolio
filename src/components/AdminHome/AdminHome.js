@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import AdminForm from '../AdminForm/AdminForm'
 
-class AdminHome extends Component {
+class AdminHome extends Component { 
+
   render() {
     return (
       <div>

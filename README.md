@@ -58,17 +58,17 @@ Place thumbnail images in the `public/images` folder.
 
 ### Project Page
 
-- [ ] Client side route that displays projects that are stored in the database
-- [ ] Each project should conditionally render a name, description, thumbnail, website, date complete and a tag. Many of the fields are optional, only show properties that aren't null.
-- [ ] Include a link to GitHub that opens in a new window
-- [ ] Add your name at the top of the page
-- [ ] Use Sagas for API requests to your server
+- [x] Client side route that displays projects that are stored in the database
+- [x] Each project should conditionally render a name, description, thumbnail, website, date complete and a tag. Many of the fields are optional, only show properties that aren't null.
+- [x] Include a link to GitHub that opens in a new window
+- [x] Add your name at the top of the page
+- [x] Use Sagas for API requests to your server
 
 ### Admin Page
 
-- [ ] Client side route that displays a form allowing you to add a new project to your portfolio
-- [ ] Include a drop down menu with a list of tags
-- [ ] Send data to the server and notify the user of success or failure
+- [x] Client side route that displays a form allowing you to add a new project to your portfolio
+- [x] Include a drop down menu with a list of tags
+- [x] Send data to the server and notify the user of success or failure
 - [ ] List projects by name and allow the user to delete them
 - [ ] Include a button that navigates to the project page
 
@@ -94,6 +94,6 @@ Place thumbnail images in the `public/images` folder.
 ## Stretch Goals
 
 - [ ] Use the GitHub API to get user information to display at the top of the page
-- [ ] Improve styling on the page using Material UI
+- [x] Improve styling on the page using Material UI
 - [ ] Include a form on the admin page for adding new tags
 - [ ] Implement additional features of the GitHub API

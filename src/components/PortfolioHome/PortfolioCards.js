@@ -30,17 +30,29 @@ class PortfolioCards extends Component {
                  component='img'
                  alt='image of project'
                  id='card-media'
-                 image={this.props.projects.thumbnail}
+                 image ={this.props.projects.thumbnail}
                  title={this.props.projects.name}
              />
              <CardContent>
-             //This is the title of the project.
                 <Typography id='project-title' variant='h6'>
                 {this.props.projects.title}
                 </Typography>
-                
+                <Typography id = 'project-type' variant ='h6'>
+                {this.props.projects.name}
+                </Typography>
+                <Typography id ='project-descrption' variant='body1'>
+                {this.props.projects.description}
+
+                </Typography>
              </CardContent>
          </CardActionArea> 
+         <CardActions>
+             <Link target='_blank' rel='noopener noreferrer' href={this.props.projects.github} variant='contained'>
+                 <Button size="small" color="primary" id='git-btn'>
+                     Github
+                 </Button>
+             </Link>
+         </CardActions>
       </Card>
 
       </Grid>

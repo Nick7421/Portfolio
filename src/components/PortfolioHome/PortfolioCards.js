@@ -34,13 +34,13 @@ class PortfolioCards extends Component {
                  title={this.props.projects.name}
              />
              <CardContent>
-                <Typography id='project-title' variant='h6'>
+                <Typography id='project-title' variant="h6">
                 {this.props.projects.title}
                 </Typography>
-                <Typography id = 'project-type' variant ='h6'>
+                <Typography id = 'project-type' variant ="h6">
                 {this.props.projects.name}
                 </Typography>
-                <Typography id ='project-descrption' variant='body1'>
+                <Typography id ='project-descrption' variant ="body1">
                 {this.props.projects.description}
 
                 </Typography>

@@ -30,6 +30,33 @@ const styles = theme => ({
     width: 200
   }
 });
+
+const tags = [
+    {
+        value: 1,
+        label: 'React',
+    },
+    {
+        value: 2,
+        label: 'jQuery',
+    },
+    {
+        value: 3,
+        label: 'Node',
+    },
+    {
+        value: 4,
+        label: 'SQL',
+    },
+    {
+        value: 5,
+        label: 'Redux',
+    },
+    {
+        value: 6,
+        label: 'HTML',
+    },
+];
 class AdminForm extends Component {
   state = {
     title: "Project Name",
@@ -100,7 +127,7 @@ handleDescriptionChange = event => {
             id="outlined-name"
             label="Title Required"
             className={classes.textField}
-            value={this.state.name}
+            value={this.state.title}
             onChange={this.handleNameChange}
             margin="normal"
             variant="outlined"

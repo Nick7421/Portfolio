@@ -21,10 +21,29 @@ class PortfolioCards extends Component {
 
 
   render() {
+      //This will display a card will all the project info.
     return (
-      <div>
-        
-      </div>
+      <Grid item lg={3}>
+      <Card id ="project-card">
+         <CardActionArea>
+             <CardMedia 
+                 component='img'
+                 alt='image of project'
+                 id='card-media'
+                 image={this.props.projects.thumbnail}
+                 title={this.props.projects.name}
+             />
+             <CardContent>
+             //This is the title of the project.
+                <Typography id='project-title' variant='h6'>
+                {this.props.projects.title}
+                </Typography>
+                
+             </CardContent>
+         </CardActionArea> 
+      </Card>
+
+      </Grid>
     )
   }
 }

@@ -16,8 +16,19 @@ import axios from 'axios';
 function* rootSaga() {
 yield takeEvery('GET_PROJECTS',getProjects);
 yield takeEvery('GET_TAGS',getTags);
+yield takeEvery('ADD_PROJECT', addProject);
 }
 
+function* addProject(action) {
+    try {
+        yield axios.post('/admin', action.payload);
+        const nextAction = { type: 'GET_PROJECTS' };
+        yield put(nextAction);
+    }
+    catch (error) {
+        yield console.log('error in addProject', error);
+    }
+}
 function* getProjects(action){
     try{
         const serverResponse = yield axios.get('/project');

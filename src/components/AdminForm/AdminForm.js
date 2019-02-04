@@ -45,13 +45,28 @@ class AdminForm extends Component {
   componentDidMount = () => {
     this.getTags();
 }
-
+//this will get the tag selection from the reduxstore
 getTags = () => {
     const action = { type: 'GET_TAGS'};
     this.props.dispatch(action);
 }
+//This will submit the new Project to the database 
+handleAddProject = event => {
+    event.preventDefault();
+    const action = ({ type: 'ADD_PROJECT', payload: this.state });
+    this.props.dispatch(action);
+    alert('You have added a project!');
+    this.setState({
+        Title: 'Project Title',
+        date: 'Date (YYYY/MM/DD)',
+        github: 'GitHub ',
+        tag: '',
+        website: 'Website (Optional)',
+        description: 'Description',
+    });
+}
 
-  handleNameChange = event => {
+  handleTitleChange = event => {
     this.setState({
         title: event.target.value,
     });
@@ -103,7 +118,7 @@ handleDescriptionChange = event => {
             label="Title Required"
             className={classes.textField}
             value={this.state.title}
-            onChange={this.handleNameChange}
+            onChange={this.handleTitleChange}
             margin="normal"
             variant="outlined"
           />
@@ -173,7 +188,7 @@ handleDescriptionChange = event => {
           <Button
             className={classes.button}
             id="submit-btn"
-            onClick={this.handleNewProject}
+            onClick={this.handleAddProject}
             variant="contained"
           >
             Submit

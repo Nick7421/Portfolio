@@ -20,7 +20,7 @@ class PortfolioHome extends Component {
   render() {
     return (
       <div>
-        <div>{JSON.stringify(this.props.reduxStore.projects)};</div>
+        {/* <div>{JSON.stringify(this.props.reduxStore.projects)};</div> */}
         <Paper id="project" elevation={3}>
           <Grid container spacing={32}>
             {this.props.reduxStore.projects.map(projects => (

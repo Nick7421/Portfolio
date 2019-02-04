@@ -31,32 +31,7 @@ const styles = theme => ({
   }
 });
 
-const tags = [
-    {
-        value: 1,
-        label: 'React',
-    },
-    {
-        value: 2,
-        label: 'jQuery',
-    },
-    {
-        value: 3,
-        label: 'Node',
-    },
-    {
-        value: 4,
-        label: 'SQL',
-    },
-    {
-        value: 5,
-        label: 'Redux',
-    },
-    {
-        value: 6,
-        label: 'HTML',
-    },
-];
+
 class AdminForm extends Component {
   state = {
     title: "Project Name",
@@ -161,6 +136,7 @@ handleDescriptionChange = event => {
           >
             {this.props.reduxStore.tags.map(tag => (
               <MenuItem key={tag.id} value={tag.name}>
+              {tag.name}
               </MenuItem>
             ))}
           </TextField>

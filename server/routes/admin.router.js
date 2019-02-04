@@ -27,8 +27,25 @@ router.delete('/:id', (req, res) => {
 
 });
 
-router.post("/", (req, res) => {
-  res.sendStatus(200);
+router.post('/', (req, res) => {
+    const addProject = req.body;
+    const queryText = `INSERT INTO "projects" ("title", "description", 
+                     "date_completed", "github", "tag_id", "website")                   
+                    VALUES ($1, $2, $3, $4, $5, $6);`;
+    const queryValues = [
+        addProject.title,
+        addProject.description,
+        addProject.date_completed,
+        addProject.github,
+        addProject.tag,
+        addProject.website,
+    ];
+    pool.query(queryText, queryValues)
+        .then(() => { res.sendStatus(201); })
+        .catch((error) => {
+            console.log('error in post', error);
+            res.sendStatus(500);
+        });
 });
 
 module.exports = router;
